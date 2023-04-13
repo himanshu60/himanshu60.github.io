@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./styles/about.css">
     <link rel="stylesheet" href="./styles/skills.css">
     <link rel="stylesheet" href="./styles/projects.css">
+    <link rel="stylesheet" href="./styles/contact.css">
 
     <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
 </head>
@@ -149,7 +150,7 @@
 
                 <div class="project-card">
                     <img src="./images/Home page.PNG" alt="">
-                    <h2 class="project-title">Click & Collect</h2>
+                    <h2 class="project-title">Flipkart</h2>
                     <p class="project-tech-stack"> <b> Tech Stack: </b> HTML | CSS | JavaScript | Node.js | Express.js |
                         MongoDB</p>
                     <p class="project-description">Flipkart Clone, an e-commerce website. Where user can purchase
@@ -191,9 +192,68 @@
                     </div>
                 </div>
 
+                <div class="project-card">
+                    <img src="./images/home-page(Hangout).png" alt="">
+                    <h2 class="project-title">Real-Time-Chat-App</h2>
+                    <p class="project-tech-stack"> <b> Tech Stack: </b> HTML | CSS | JavaScript | JSON Server</p>
+                    <p class="project-description">It is an online communication channel that allows you to conduct
+                        real-time conversations. It involves the transmission of live text messages from the sender to
+                        the recipient.
+                    </p>
+                    <div id="project-btn">
+                        <a class="project-github-link" href="https://github.com/himanshu60/spry-smash-650"
+                            target="_blank"><button>GitHub</button></a>
+                        <a class="project-deployed-link" href="https://transcendent-horse-5d8cb8.netlify.app/"
+                            target="_blank"><button>Demo</button></a>
+                    </div>
+
+
+                </div>
+
+                <div id="contact">
+                    <!-- Contact -->
+                    <h1>Contact</h1>
+                    <div>
+                        <div id="sm-links">
+                            <h4>Phone:</h4>
+                            <p id="contact-phone">+91 8433250941</p>
+                            <h4>Email:</h4>
+                            <p id="contact-email">baliyanh10@gmail.com</p>
+                            <div>
+                                <img src="./images/linkedin.png" alt="">
+                                <a id="contact-linkedin"
+                                    href="https://www.linkedin.com/in/himanshu-raghuvanshi-522a05197/"
+                                    target="_blank">LinkedIn</a>
+                            </div>
+                            <div>
+                                <img src="./images/github.png" alt="">
+                                <a id="contact-github" href="https://github.com/himanshu60" target="_blank">GitHub</a>
+                            </div>
+
+                        </div>
+                        <form id="contact-form" action="">
+                            <label for="name">Name*</label>
+                            <input type="text" placeholder="Name" required>
+                            <label for="email">Email*</label>
+                            <input type="text" placeholder="Email" required>
+                            <label for="phone">Phone</label>
+                            <input type="text" placeholder="Phone">
+                            <label for="message">Message*</label>
+                            <textarea name="" id="" placeholder="Your Message" rows="5" required></textarea>
+                            <input type="submit">
+                        </form>
+                    </div>
+                </div>
+
     </main>
     <div id="btm">Thanks for Visiting ❤️❤️❤️ </div>
 </body>
 
 </html>
+<script defer src="./scripts/download.js"></script>
+<script defer src="./scripts/home.js"></script>
 <script defer src="./scripts/navbar.js"></script>
+<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+<script>
+    GitHubCalendar(".calendar", "himanshu60", { global_stats: false, responsive: true });
+</script>
