@@ -6,7 +6,11 @@ resume_btn2.addEventListener("click", () => {
     window.location.assign("https://drive.google.com/file/d/1vBwRdoqf73gkwaBrB0If34oQ0RwP4Wtc/view?usp=sharing", "_blank");
 })
 
-document.getElementById('resume-link-1').addEventListener("click", () => {
+resume_btn1.addEventListener("click", () => {
     window.location.assign("https://drive.google.com/file/d/1vBwRdoqf73gkwaBrB0If34oQ0RwP4Wtc/view?usp=sharing", "_blank");
-
 })
+
+// document.getElementById('resume-link-1').addEventListener("click", () => {
+//     window.location.assign("https://drive.google.com/file/d/1vBwRdoqf73gkwaBrB0If34oQ0RwP4Wtc/view?usp=sharing", "_blank");
+
+// })
