@@ -30,7 +30,7 @@
             <a class="nav-link skills" href="#skills"> <button>Skills</button></a>
             <a class="nav-link projects" href="#projects"> <button>Projects</button></a>
             <a class="nav-link contact" href="#contact"> <button>Contact</button></a>
-            <a class="nav-link resume" id="resume-link-1" href="./resume/Himanshu-Choudhary-Resume.pdf" download> <button id="resume-button-1">Resume</button></a>
+            <button id="resume-button-1"><a class="nav-link resume" id="resume-link-1" href="./resume/Himanshu-Choudhary-Resume.pdf" download>Resume</a></button>
         </div>
         <div id="main">
             <div id="home">
@@ -230,16 +230,17 @@
                             </div>
 
                         </div>
-                        <form id="contact-form" action="">
+                        <form id="contact-form" action="https://formspree.io/f/xrgvdbrb" method="POST">
                             <label for="name">Name*</label>
-                            <input type="text" placeholder="Name" required>
+                            <input type="text" name="name" placeholder="Name" required>
                             <label for="email">Email*</label>
-                            <input type="text" placeholder="Email" required>
+                            <input type="text" name="email" placeholder="Email" required>
                             <label for="phone">Phone</label>
-                            <input type="text" placeholder="Phone">
+                            <input type="text" name="phone" placeholder="Phone">
                             <label for="message">Message*</label>
-                            <textarea name="" id="" placeholder="Your Message" rows="5" required></textarea>
-                            <input type="submit">
+                            <textarea name="Message" id="" placeholder="Your Message" rows="5" required></textarea>
+                            <!-- <input type="submit"> -->
+                            <button>Submit</button>
                         </form>
                     </div>
                 </div>

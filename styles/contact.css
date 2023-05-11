@@ -46,7 +46,8 @@
 
 
 #contact-form>input,
-#contact-form>textarea {
+#contact-form>textarea,
+#contact-form>button{
     margin: 10px auto;
     width: 75%;
     padding: 10px;
