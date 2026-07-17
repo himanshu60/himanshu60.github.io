@@ -1,0 +1,293 @@
+/* ============================================================
+   Premium animation layer — additive only.
+   Background blobs, preloader, scroll-to-top, ripple,
+   card tilt/shine/zoom, animated timeline, social bounce.
+   All hardware-accelerated (transform / opacity).
+   ============================================================ */
+
+/* ---------- animated background blobs ---------- */
+#bg-blobs {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#bg-blobs span {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.55;
+    will-change: transform;
+}
+
+#bg-blobs .blob-1 {
+    width: 42vw;
+    height: 42vw;
+    top: -8vw;
+    left: -6vw;
+    background: radial-gradient(circle at 30% 30%, var(--accent), transparent 70%);
+    animation: blob-drift-1 22s ease-in-out infinite;
+}
+
+#bg-blobs .blob-2 {
+    width: 38vw;
+    height: 38vw;
+    bottom: -10vw;
+    right: -8vw;
+    background: radial-gradient(circle at 60% 40%, #7c5cff, transparent 70%);
+    animation: blob-drift-2 26s ease-in-out infinite;
+}
+
+#bg-blobs .blob-3 {
+    width: 30vw;
+    height: 30vw;
+    top: 40%;
+    left: 55%;
+    background: radial-gradient(circle at 50% 50%, #22d3ee, transparent 70%);
+    animation: blob-drift-3 30s ease-in-out infinite;
+    opacity: 0.4;
+}
+
+:root[data-theme="dark"] #bg-blobs span {
+    opacity: 0.28;
+}
+
+:root[data-theme="dark"] #bg-blobs .blob-3 {
+    opacity: 0.22;
+}
+
+@keyframes blob-drift-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(6vw, 5vw) scale(1.12); }
+}
+
+@keyframes blob-drift-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-7vw, -4vw) scale(1.08); }
+}
+
+@keyframes blob-drift-3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-5vw, 4vw) scale(1.1); }
+    66% { transform: translate(4vw, -5vw) scale(0.95); }
+}
+
+/* ---------- preloader ---------- */
+#preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color);
+    transition: opacity 0.6s var(--ease), visibility 0.6s var(--ease);
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-ring {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-right-color: var(--accent);
+    animation: loader-spin 0.9s linear infinite;
+}
+
+.loader-mark {
+    position: absolute;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 1px;
+    animation: loader-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes loader-spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes loader-pulse {
+    0%, 100% { opacity: 0.55; transform: scale(0.94); }
+    50% { opacity: 1; transform: scale(1.06); }
+}
+
+/* ---------- scroll-to-top button ---------- */
+#scroll-top {
+    position: fixed;
+    right: 26px;
+    bottom: 26px;
+    z-index: 1500;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-strong);
+    border-radius: 50%;
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+    box-shadow: 0 8px 22px var(--accent-glow);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px) scale(0.85);
+    transition: opacity 0.35s var(--ease), transform 0.35s var(--ease), visibility 0.35s var(--ease);
+}
+
+#scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+#scroll-top:hover {
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 14px 30px var(--accent-glow);
+}
+
+#scroll-top svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ---------- ripple (buttons) ---------- */
+.btn,
+.nav-link button,
+#resume-button-1,
+.project-github-link>button,
+.project-deployed-link>button,
+.social-pill,
+#scroll-top {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    background: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    animation: ripple-out 0.6s ease-out;
+}
+
+@keyframes ripple-out {
+    to { transform: scale(2.6); opacity: 0; }
+}
+
+/* ---------- project card: tilt + shine + image zoom ---------- */
+.project-card {
+    transform-style: preserve-3d;
+}
+
+.project-card>img {
+    transition: transform 0.5s var(--ease);
+}
+
+.project-card:hover>img {
+    transform: scale(1.06);
+}
+
+/* shine sweep across the whole card on hover */
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.7s var(--ease);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.project-card:hover::before {
+    left: 130%;
+}
+
+:root[data-theme="light"] .project-card::before {
+    background: linear-gradient(120deg, transparent, rgba(47, 127, 224, 0.10), transparent);
+}
+
+/* ---------- animated timeline line (experience) ---------- */
+.timeline {
+    position: relative;
+}
+
+.exp-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* soft glow that sweeps up the accent border on hover */
+.exp-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--accent), transparent);
+    transform: translateY(-100%);
+    transition: transform 0.6s var(--ease);
+}
+
+.exp-card:hover::after {
+    transform: translateY(100%);
+}
+
+/* ---------- skill icon spin-in accent + hover glow ---------- */
+.skills-card:hover {
+    box-shadow: 0 14px 36px var(--accent-glow);
+}
+
+.skills-card:hover .skills-icon {
+    box-shadow: 0 0 0 2px var(--accent), var(--shadow-md);
+}
+
+/* ---------- social icon bounce ---------- */
+.social-pill svg {
+    transition: transform 0.3s var(--ease);
+}
+
+.social-pill:hover svg {
+    animation: icon-bounce 0.6s var(--ease);
+}
+
+@keyframes icon-bounce {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-6px) scale(1.15); }
+    60% { transform: translateY(2px) scale(0.96); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+/* ---------- theme toggle rotate feedback ---------- */
+.theme-toggle:active {
+    transform: rotate(180deg) scale(0.9);
+}
+
+/* ---------- reduced motion: disable decorative motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    #bg-blobs span,
+    .loader-ring,
+    .loader-mark {
+        animation: none !important;
+    }
+
+    .project-card::before,
+    .exp-card::after,
+    .social-pill:hover svg {
+        transition: none !important;
+        animation: none !important;
+    }
+}

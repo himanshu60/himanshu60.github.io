@@ -1,30 +1,76 @@
-#skills>div {
+.skills-grid {
     display: grid;
-    margin-top: 80px;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-.skills-card-img {
-    width: 50%;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .skills-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 22px 14px;
     text-align: center;
-    color: aliceblue;
-    font-size: large;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
-#skills>h1 {
-    color: aliceblue;
-    text-align: center;
-    text-decoration: underline;
-    text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 1em blue, 0 0 0.2em blue;
+.skills-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
 }
 
-/* tablet screens */
+/* light tile so brand logos (incl. dark ones) stay visible in both themes */
+.skills-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    border-radius: 16px;
+    background: var(--icon-tile);
+    border: 1px solid var(--icon-tile-border);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s var(--ease);
+}
+
+.skills-card:hover .skills-icon {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+.skills-card-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.skills-card-name {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
 @media screen and (max-width: 768px) {
-    #skills {
-        margin-top: 30px;
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 14px;
+    }
+
+    .skills-icon {
+        width: 58px;
+        height: 58px;
+    }
+
+    .skills-card-img {
+        width: 34px;
+        height: 34px;
     }
 }

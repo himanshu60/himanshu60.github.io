@@ -1,52 +1,35 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    background-image: url(../images/black.jpeg);
-    /* background-color: url(../images//black.jpeg); */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    overflow-x: hidden;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-::-webkit-scrollbar {
-    width: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #607d8b;
-    border-radius: 5px;
-}
+/* base body / html / scrollbar now live in theme.css */
 
 #nav-menu {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--surface-2);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border);
     flex-direction: column;
     margin-top: 5vh;
     margin-left: 2vw;
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    padding: 5vh 0;
-    box-shadow: 2px 2px 3px #bebebe, -2px -2px 3px #ffffff;
+    padding: 4vh 0;
+    box-shadow: var(--shadow-md);
     border-radius: 20px;
+    transition: background-color 0.4s var(--ease), border-color 0.4s var(--ease);
 }
 
-#nav-menu>a,#nav-menu #resume-button-1 {
-    margin: 6% 0;
-    width: 50%;
+#nav-menu>a,
+#nav-menu #resume-button-1 {
+    margin: 5% 0;
+    width: 60%;
+}
+
+#nav-menu #theme-toggle {
+    margin-top: 6%;
 }
 
 #top {
     display: none;
 }
-
-/* --green: #1BFD9C; */
 
 main {
     display: flex;
@@ -56,59 +39,69 @@ main {
     margin-left: 30vw;
     width: 70%;
     padding: 5vh;
+    max-width: var(--maxw);
+}
+
+.nav-link {
+    text-decoration: none;
 }
 
 .nav-link button {
-    --green: #00ff44;
     font-size: 15px;
     width: 100%;
     padding: 0.7em 0;
     letter-spacing: 0.06em;
     position: relative;
-    border-radius: 0.6em;
+    border-radius: 0.7em;
     overflow: hidden;
-    transition: all 0.3s;
+    cursor: pointer;
+    transition: all 0.3s var(--ease);
     line-height: 1.4em;
-    border: 2px solid #607d8b;
-    background: linear-gradient(to right,
-            rgba(9, 185, 255, 0.1) 1%,
-            transparent 40%,
-            transparent 60%,
-            rgba(9, 185, 255, 0.1) 100%);
-    color: #607d8b;
-    box-shadow: inset 0 0 10px rgba(9, 185, 255, 0.4),
-        0 0 9px 3px rgba(9, 185, 255, 0.1);
+    border: 1.5px solid var(--border-strong);
+    background: var(--surface);
+    color: var(--text);
 }
 
-#resume-button-1 a{
-    text-decoration: none;
-    color: #607d8b;
+.nav-link button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-soft);
+    box-shadow: 0 0 12px var(--accent-glow);
+    transform: translateY(-1px);
 }
-#nav-menu #resume-button-1{
-    --green: #00ff44;
+
+/* active nav link (set by JS on scroll) */
+.nav-link.active button {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-soft);
+    box-shadow: inset 0 0 10px var(--accent-glow);
+}
+
+#resume-button-1 {
+    cursor: pointer;
     font-size: 15px;
-   
     padding: 0.7em 0;
     letter-spacing: 0.06em;
     position: relative;
-    border-radius: 0.6em;
+    border-radius: 0.7em;
     overflow: hidden;
-    transition: all 0.3s;
+    transition: all 0.3s var(--ease);
     line-height: 1.4em;
-    border: 2px solid #607d8b;
-    background: linear-gradient(to right,
-            rgba(9, 185, 255, 0.1) 1%,
-            transparent 40%,
-            transparent 60%,
-            rgba(9, 185, 255, 0.1) 100%);
-    color: #607d8b;
-    box-shadow: inset 0 0 10px rgba(9, 185, 255, 0.4),
-        0 0 9px 3px rgba(9, 185, 255, 0.1);
+    border: 1.5px solid var(--accent-strong);
+    background: linear-gradient(120deg, var(--accent-strong), var(--accent));
+    box-shadow: 0 6px 16px var(--accent-glow);
 }
 
-.nav-link>button:hover {
-    box-shadow: inset 0 0 10px rgba(9, 185, 255, 0.6),
-        0 0 9px 3px rgba(9, 185, 255, 0.2);
+#resume-button-1 a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+#resume-button-1:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px var(--accent-glow);
 }
 
 .nav-link>button:before {
@@ -119,26 +112,29 @@ main {
     height: 100%;
     top: 0;
     transition: transform 0.4s ease-in-out;
-    background: linear-gradient(to right,
-            transparent 1%,
-            rgba(9, 185, 255, 0.1) 40%,
-            rgba(9, 185, 255, 0.1) 60%,
-            transparent 100%);
+    background: linear-gradient(to right, transparent 1%, var(--accent-soft) 40%, var(--accent-soft) 60%, transparent 100%);
 }
 
 .nav-link>button:hover:before {
     transform: translateX(15em);
 }
 
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 #btm {
     margin-left: 30vw;
     width: 70%;
     text-align: center;
-    color: #ffffff;
-    padding-bottom: 20px;
+    color: var(--text-muted);
+    padding: 24px 0 30px;
+    font-size: 0.95rem;
 }
 
-/* tablet screens */
+/* tablet & below */
 @media screen and (max-width: 768px) {
     #nav-menu {
         display: none;
@@ -149,58 +145,61 @@ main {
     }
 
     #main {
-        width: 90%;
+        width: 92%;
         margin: auto;
-        padding: 0;
+        padding: 0 0 24px;
     }
 
     #top {
         display: flex;
         justify-content: space-between;
-        padding: 5px 10px;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-            rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-        color: white;
+        align-items: center;
+        padding: 10px 16px;
+        box-shadow: var(--shadow-sm);
+        color: var(--heading);
         position: sticky;
         top: 0;
-        background-color: #607d8b;
+        background: var(--surface-2);
+        backdrop-filter: var(--glass-blur);
+        -webkit-backdrop-filter: var(--glass-blur);
+        border-bottom: 1px solid var(--border);
         z-index: 99;
     }
 
-    #top>img {
-        width: 8%;
-        padding: 1%;
-        margin: auto 0;
-        position: relative;
+    #top>.top-actions>#nav-btn {
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+    }
+
+    :root[data-theme="dark"] #top>.top-actions>#nav-btn {
         filter: invert(1);
     }
 
     #top>h1 {
-        font-size: large;
-        margin: auto 0;
+        font-size: 1.15rem;
+        margin: 0;
+        color: var(--heading);
     }
 
     #btm {
-        width: 90%;
+        width: 92%;
         margin: auto;
     }
 
     @keyframes slide-in-right {
         0% {
-            -webkit-transform: translateX(1000px);
             transform: translateX(1000px);
             opacity: 0;
         }
 
         100% {
-            -webkit-transform: translateX(0);
             transform: translateX(0);
             opacity: 1;
         }
     }
 }
 
-/* mobile screens */
 @media screen and (max-width: 480px) {
     #main {
         margin: auto;
@@ -210,6 +209,6 @@ main {
 @media screen and (min-width: 769px) {
     #nav-menu {
         display: flex;
-        width: 23%;
+        width: 22%;
     }
 }

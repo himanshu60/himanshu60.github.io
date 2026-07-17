@@ -9,11 +9,19 @@ navBtn.addEventListener("click", () => {
         navMenu.style = `
             display: flex;
             width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            justify-content: center;
             z-index: 1000;
             position: fixed;
             box-shadow: none;
             margin: 0;
-            border-radius:0;
+            border: none;
+            border-radius: 0;
+            background: var(--bg-color);
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
             transition: 1s;
                 -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
                         animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;

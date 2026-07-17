@@ -1,4 +1,4 @@
-var words = ["Full Stack Web Developer.", "Coder.", "Programmer.", "Backend Developer."];
+var words = ["Software Engineer.", "Full Stack Developer.", "Backend Developer.", "Node.js & Go Developer.", "Angular / Next.js Developer."];
 
 var counter = 0;
 var currentIndex = getRandomInt(0, words.length - 1);

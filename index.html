@@ -5,300 +5,603 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Himanshu Choudhary | Portfolio</title>
+
+    <!-- Primary Meta -->
+    <title>Himanshu Choudhary | Software Engineer &amp; Full Stack Developer</title>
+    <meta name="title" content="Himanshu Choudhary | Software Engineer & Full Stack Developer">
+    <meta name="description"
+        content="Software Engineer with 3+ years building scalable SaaS apps with Angular, Next.js, Node.js and Go. Angular→Next.js migrations, Twilio dialer, real-time features and secure auth.">
+    <meta name="author" content="Himanshu Choudhary">
+    <meta name="keywords"
+        content="Himanshu Choudhary, Software Engineer, Full Stack Developer, Node.js, Go, Angular, Next.js, React, Backend Developer, SaaS, Twilio, WebSockets">
+    <meta name="theme-color" content="#0a0e17">
+    <link rel="canonical" href="https://himanshu60.github.io/">
+
+    <!-- set theme before paint to avoid flash -->
+    <script>
+        (function () {
+            try {
+                var s = localStorage.getItem("theme");
+                var t = s || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+                document.documentElement.setAttribute("data-theme", t);
+            } catch (e) { document.documentElement.setAttribute("data-theme", "dark"); }
+        })();
+    </script>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://himanshu60.github.io/">
+    <meta property="og:title" content="Himanshu Choudhary | Software Engineer & Full Stack Developer">
+    <meta property="og:description"
+        content="3+ years building scalable SaaS with Angular, Next.js, Node.js & Go. Angular→Next.js migrations, Twilio dialer, real-time features.">
+    <meta property="og:image" content="https://himanshu60.github.io/images/himmu_pic.png">
+    <meta property="og:site_name" content="Himanshu Choudhary">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Himanshu Choudhary | Software Engineer & Full Stack Developer">
+    <meta name="twitter:description"
+        content="3+ years building scalable SaaS with Angular, Next.js, Node.js & Go.">
+    <meta name="twitter:image" content="https://himanshu60.github.io/images/himmu_pic.png">
+
     <link rel="icon" href="./images/Logo (1).png" type="image/x-icon">
+
+    <link rel="stylesheet" href="./styles/theme.css">
     <link rel="stylesheet" href="./styles/navbar.css">
     <link rel="stylesheet" href="./styles/home.css">
     <link rel="stylesheet" href="./styles/about.css">
     <link rel="stylesheet" href="./styles/skills.css">
     <link rel="stylesheet" href="./styles/projects.css">
     <link rel="stylesheet" href="./styles/contact.css">
+    <link rel="stylesheet" href="./styles/animations.css">
 
-    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Himanshu Choudhary",
+      "jobTitle": "Software Engineer / Full Stack Developer",
+      "email": "mailto:baliyanh10@gmail.com",
+      "telephone": "+91-8433250941",
+      "url": "https://himanshu60.github.io/",
+      "image": "https://himanshu60.github.io/images/himmu_pic.png",
+      "address": { "@type": "PostalAddress", "addressLocality": "Delhi NCR", "addressRegion": "Delhi", "addressCountry": "IN" },
+      "worksFor": { "@type": "Organization", "name": "Clodura.AI" },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Krishna Institute of Engineering and Technology, Ghaziabad" },
+        { "@type": "EducationalOrganization", "name": "Masai School, Bengaluru" }
+      ],
+      "knowsAbout": ["Node.js", "Go", "Angular", "Next.js", "React.js", "TypeScript", "REST APIs", "MongoDB", "WebSockets", "Twilio"],
+      "sameAs": [
+        "https://github.com/himanshu60",
+        "https://www.linkedin.com/in/himanshu-choudhary-522a05197/"
+      ]
+    }
+    </script>
 </head>
 
 <body>
+    <!-- preloader -->
+    <div id="preloader">
+        <div class="loader-ring"></div>
+        <span class="loader-mark">HC</span>
+    </div>
+
+    <!-- animated background -->
+    <div id="bg-blobs" aria-hidden="true">
+        <span class="blob-1"></span>
+        <span class="blob-2"></span>
+        <span class="blob-3"></span>
+    </div>
+
+    <!-- mobile header -->
     <div id="top">
         <h1>Himanshu Choudhary</h1>
-        <img id="nav-btn" src="./images/menu-burger.png" alt="">
-    </div>
-    <main>
-
-        <div id="nav-menu">
-            <a class="nav-link home" href="#home"> <button>Home</button></a>
-            <a class="nav-link about" href="#about"> <button>About Me</button></a>
-            <a class="nav-link skills" href="#skills"> <button>Skills</button></a>
-            <a class="nav-link projects" href="#projects"> <button>Projects</button></a>
-            <a class="nav-link contact" href="#contact"> <button>Contact</button></a>
-            <button id="resume-button-1"><a class="nav-link resume" id="resume-link-1" href="./resume/Himanshu_Choudhary_Resume.pdf" download>Resume</a></button>
+        <div class="top-actions">
+            <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle theme" type="button">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+                </svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+                </svg>
+            </button>
+            <img id="nav-btn" src="./images/menu-burger.png" alt="Open menu">
         </div>
+    </div>
+
+    <main>
+        <div id="nav-menu">
+            <a class="nav-link home" href="#home"><button>Home</button></a>
+            <a class="nav-link about" href="#about"><button>About</button></a>
+            <a class="nav-link experience" href="#experience"><button>Experience</button></a>
+            <a class="nav-link skills" href="#skills"><button>Skills</button></a>
+            <a class="nav-link projects" href="#projects"><button>Projects</button></a>
+            <a class="nav-link contact" href="#contact"><button>Contact</button></a>
+            <button id="resume-button-1"><a class="nav-link resume" id="resume-link-1"
+                    href="./resume/Himanshu_Choudhary_Resume.pdf" download>Resume</a></button>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" type="button">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+                </svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+                </svg>
+            </button>
+        </div>
+
         <div id="main">
-            <div id="home">
-                <!-- Home -->
-                <img src="/images/developer-removebg.png" alt="">
-                <div>
-                    <h1 class="focus-in-expand">Hey👋, I'm Himanshu Choudhary.</h1>
+            <!-- ============ HERO ============ -->
+            <section id="home">
+                <img src="./images/developer-removebg.png" alt="Himanshu Choudhary illustration" loading="eager">
+                <div class="hero-copy">
+                    <p class="hero-eyebrow">👋 Hey, I'm</p>
+                    <h1 class="focus-in-expand">Himanshu Choudhary</h1>
                     <pre><h2>I'm a </h2><h2 id="text2"></h2></pre>
-                    <a id="resume-link-2" href="./resume/Himanshu_Choudhary_Resume.pdf" download><button
-                            id="resume-button-2"> Resume </button></a>
+                    <p class="hero-lead">
+                        Software Engineer with <b>3+ years</b> building scalable SaaS products with
+                        Angular, Next.js, Node.js and Go — from real-time features to secure, role-based platforms.
+                    </p>
+                    <div class="hero-cta">
+                        <a id="resume-link-2" href="./resume/Himanshu_Choudhary_Resume.pdf" download class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path>
+                            </svg>
+                            Download Resume
+                        </a>
+                        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+                    </div>
                 </div>
-            </div>
-            <div id="about" class="about section">
-                <!-- About Me -->
-                <h1>About</h1>
-                <div id="me">
-                    <img src="./images/himmu_pic.png" alt="" class="home-img">
+            </section>
+
+            <!-- ============ ABOUT ============ -->
+            <section id="about" class="section">
+                <div class="section-head">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">A quick snapshot of who I am and what I build.</p>
+                </div>
+
+                <div id="me" class="reveal">
+                    <img src="./images/himmu_pic.png" alt="Himanshu Choudhary" class="home-img">
                     <p id="user-detail-intro">
-                        Hi, I'm <b id="user-detail-name">Himanshu Choudhary</b>.Experienced Node.js Backend developer with expertise
-                        in HTML, CSS, JavaScript, Redux, MongoDB, and
-                        Express.js. Proficient in Generative AI and prompt
-                        engineering using ChatGPT. Completed rigorous web
-                        development training, and quick adoption of advanced
-                        tech. Strong problem-solving and collaborative team
-                        player with a solid foundation in DSA.
+                        Hi, I'm <b id="user-detail-name">Himanshu Choudhary</b> — a Software Engineer at
+                        <b>Clodura.AI</b> with 3+ years of experience building enterprise-scale B2B SaaS
+                        applications. I specialize in designing REST APIs, migrating Angular apps to Next.js,
+                        and shipping real-time features with WebSockets and Twilio. I've owned backend systems
+                        end-to-end and implemented secure authentication and role-based access across platforms.
+                        I care about clean architecture, performance, and building products people rely on daily.
                     </p>
                 </div>
-                <div id="extras">
-                    <div>
-                        <h1>1200+ hours</h1>
-                        <p> of hands-on coding experience.</p>
+
+                <!-- Highlights / Achievements -->
+                <div id="extras" class="stagger">
+                    <div class="stat-card reveal">
+                        <h3 class="counter" data-count="3" data-suffix="+ Years">3+ Years</h3>
+                        <p>of professional software engineering.</p>
                     </div>
-                    <div>
-                        <h1>100+ hours</h1>
-                        <p>of soft-skills training.</p>
+                    <div class="stat-card reveal">
+                        <h3 class="counter" data-count="8" data-suffix="+ Modules">8+ Modules</h3>
+                        <p>migrated from Angular to Next.js.</p>
                     </div>
-                </div>
-                <h1>GitHub Stats</h1>
-                <div class="stats">
-                    <img id="github-streak-stats"
-                        src="https://github-readme-streak-stats.herokuapp.com?user=himanshu60&theme=algolia" alt="">
-                </div>
-                <div class="stats">
-                    <img id="github-top-langs" alt="most used languages"
-                        src="https://github-readme-stats.vercel.app/api/top-langs/?username=himanshu60&count_private=true&theme=algolia&bg_color=0,000000,130F40&layout=compact&border_radius=8&langs_count=20&hide=hack,swift,kotlin,objective-c" />
-                </div>
-                <div class="stats">
-                    <img id="github-stats-card"
-                        src="https://github-readme-stats.vercel.app/api?username=himanshu60&show_icons=true&theme=algolia"
-                        alt="">
+                    <div class="stat-card reveal">
+                        <h3 class="counter" data-count="30" data-suffix="% Faster">30% Faster</h3>
+                        <p>page load &amp; API response times.</p>
+                    </div>
+                    <div class="stat-card reveal">
+                        <h3 class="counter" data-count="200" data-suffix="+ Users">200+ Users</h3>
+                        <p>on a system I owned solo.</p>
+                    </div>
                 </div>
 
-                <div class="calendar react-activity-calendar" style="width: 100%; height: auto; border: none;">
+            </section>
 
+            <!-- ============ EXPERIENCE ============ -->
+            <section id="experience" class="section">
+                <div class="section-head">
+                    <h2 class="section-title">Experience</h2>
+                    <p class="section-subtitle">Where I've worked and what I've shipped.</p>
                 </div>
 
-            </div>
-            <div id="skills">
-                <h1>Skills</h1>
-                <!-- skills -->
-                <div>
-                    <div class="skills-card">
-                        <img title="HTML" class="skills-card-img" src="./images/html.png" alt="html">
-                        <p class="skills-card-name">HTML</p>
-                    </div>
-                    <div class="skills-card">
-                        <img title="CSS" class="skills-card-img" src="./images/css-3.png" alt="css">
-                        <p class="skills-card-name">CSS</p>
-                    </div>
-                    <div class="skills-card">
-                        <img title="JavaScript" class="skills-card-img" src="./images/javascript.svg" alt="javascript">
-                        <p class="skills-card-name">JavaScript</p>
-                    </div>
-                    <div class="skills-card">
-                        <img title="TypeScript" class="skills-card-img" src="./images/Typescript-02.svg" alt="TS">
-                        <p class="skills-card-name">TypeScript</p>
-                    </div>
-                    <div class="skills-card">
-                        <img title="Node.js" class="skills-card-img" src="./images/nodejs.svg" alt="nodejs">
+                <div class="timeline stagger">
+                    <!-- Clodura -->
+                    <article class="exp-card reveal">
+                        <div class="exp-head">
+                            <div>
+                                <h3 class="exp-role">Software Engineer</h3>
+                                <p class="exp-company">Clodura.AI</p>
+                            </div>
+                            <span class="exp-date">Jan 2024 – Present</span>
+                        </div>
+                        <ul class="exp-points">
+                            <li>Owned the migration of <b>8+ Angular modules to Next.js</b>, improving page-load speed and SEO across the platform.</li>
+                            <li>Improved page load and API response times by <b>30%</b> by removing redundant API calls and adding a caching layer.</li>
+                            <li>Built a <b>Twilio-based dialer</b> with call-usage tracking and recording management, integrated into the core sales workflow.</li>
+                            <li>Implemented unlock workflows, entitlement validation and bulk export for a high-traffic Contact Search module.</li>
+                            <li>Developed enterprise B2B SaaS modules — Company Profile, Contact Search and Dialer — with Angular, Next.js, Node.js and Go.</li>
+                            <li>Built a reusable UI component library (Next.js, React, TypeScript, Tailwind, Shadcn UI) adopted across modules.</li>
+                            <li>Implemented authentication, authorization and role-based access control, plus real-time features with Socket.io / WebSockets.</li>
+                        </ul>
+                        <div class="tag-row" style="justify-content:flex-start">
+                            <span class="tag">Angular</span><span class="tag">Next.js</span><span class="tag">React</span>
+                            <span class="tag">Node.js</span><span class="tag">Go</span><span class="tag">RTK Query</span>
+                            <span class="tag">Twilio</span><span class="tag">WebSockets</span><span class="tag">Tailwind</span>
+                        </div>
+                    </article>
+
+                    <!-- Zongovita -->
+                    <article class="exp-card reveal">
+                        <div class="exp-head">
+                            <div>
+                                <h3 class="exp-role">Software Developer</h3>
+                                <p class="exp-company">Zongovita Pvt. Ltd.</p>
+                            </div>
+                            <span class="exp-date">Jul 2023 – Dec 2023</span>
+                        </div>
+                        <ul class="exp-points">
+                            <li><b>Sole backend developer</b> for a company-wide Attendance Management System — designed and built the entire Node.js architecture from scratch, used daily by <b>200+ employees</b>.</li>
+                            <li>Built RESTful APIs for attendance tracking, leave requests and reporting.</li>
+                            <li>Implemented authentication and authorization for secure employee access.</li>
+                            <li>Designed MongoDB schemas, fixed production issues and improved overall performance.</li>
+                        </ul>
+                        <div class="tag-row" style="justify-content:flex-start">
+                            <span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span>
+                            <span class="tag">REST APIs</span><span class="tag">JWT</span>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Education -->
+                <h2 class="section-title gh-title reveal" style="margin-top:48px">Education</h2>
+                <div class="edu-grid stagger">
+                    <article class="edu-card reveal">
+                        <h3>Master of Computer Applications (MCA)</h3>
+                        <p class="edu-place">Krishna Institute of Engineering and Technology, Ghaziabad</p>
+                        <span class="edu-date">2019 – 2021</span>
+                    </article>
+                    <article class="edu-card reveal">
+                        <h3>Full Stack Web Development</h3>
+                        <p class="edu-place">Masai School, Bengaluru</p>
+                        <span class="edu-date">2022 – 2023</span>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ============ SKILLS ============ -->
+            <section id="skills" class="section">
+                <div class="section-head">
+                    <h2 class="section-title">Skills</h2>
+                    <p class="section-subtitle">Tools and technologies I work with day to day.</p>
+                </div>
+                <div class="skills-grid stagger">
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon"><img class="skills-card-img" src="./images/nodejs.svg" alt="Node.js" loading="lazy"></span>
                         <p class="skills-card-name">Node.js</p>
                     </div>
-                    <div class="skills-card">
-                        <img title="Express.js" class="skills-card-img" src="./images/expressjs_logo.png" alt="">
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon"><img class="skills-card-img" src="./images/javascript.svg" alt="JavaScript" loading="lazy"></span>
+                        <p class="skills-card-name">JavaScript</p>
+                    </div>
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon"><img class="skills-card-img" src="./images/Typescript-02.svg" alt="TypeScript" loading="lazy"></span>
+                        <p class="skills-card-name">TypeScript</p>
+                    </div>
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon"><img class="skills-card-img" src="./images/expressjs_logo.png" alt="Express.js" loading="lazy"></span>
                         <p class="skills-card-name">Express.js</p>
                     </div>
-                    <div class="skills-card">
-                        <img title="MongoDB" class="skills-card-img" src="./images/mongodb.svg" alt="mongodb">
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon"><img class="skills-card-img" src="./images/nextjs.svg" alt="Next.js" loading="lazy"></span>
+                        <p class="skills-card-name">Next.js</p>
+                    </div>
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon"><img class="skills-card-img" src="./images/react.svg" alt="React.js" loading="lazy"></span>
+                        <p class="skills-card-name">React.js</p>
+                    </div>
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon"><img class="skills-card-img" src="./images/angular.svg" alt="Angular" loading="lazy"></span>
+                        <p class="skills-card-name">Angular</p>
+                    </div>
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon">
+                            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#5db4ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-label="REST APIs">
+                                <path d="M4 7h10a4 4 0 0 1 0 8H8"></path>
+                                <path d="M8 11l-4 4 4 4"></path>
+                                <circle cx="18" cy="7" r="2"></circle>
+                            </svg>
+                        </span>
+                        <p class="skills-card-name">REST APIs</p>
+                    </div>
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon"><img class="skills-card-img" src="./images/mongodb.svg" alt="MongoDB" loading="lazy"></span>
                         <p class="skills-card-name">MongoDB</p>
                     </div>
-                    <div class="skills-card">
-                        <img title="Redis" class="skills-card-img" src="./images/redis.svg" alt="mongodb">
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon"><img class="skills-card-img" src="./images/go.svg" alt="Go" loading="lazy"></span>
+                        <p class="skills-card-name">Go</p>
+                    </div>
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon"><img class="skills-card-img" src="./images/redis.svg" alt="Redis" loading="lazy"></span>
                         <p class="skills-card-name">Redis</p>
                     </div>
-                    <div class="skills-card">
-                        <img title="MySQL" class="skills-card-img" src="./images/mysql.png" alt="mysql">
-                        <p class="skills-card-name">MySQL</p>
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon"><img class="skills-card-img" src="./images/socketio.svg" alt="Socket.io" loading="lazy"></span>
+                        <p class="skills-card-name">Socket.io</p>
                     </div>
-                    <div class="skills-card">
-                        <img title="AWS - Amazon Web Services" class="skills-card-img"
-                            src="./images/Amazon_Web_Services_Logo.svg" alt="AWS">
-                        <p class="skills-card-name">AWS</p>
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon"><img class="skills-card-img" src="./images/twilio.svg" alt="Twilio" loading="lazy"></span>
+                        <p class="skills-card-name">Twilio</p>
                     </div>
-                    <div class="skills-card">
-                        <img title="Git" class="skills-card-img" src="./images/git-scm-icon.svg" alt="Git">
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon"><img class="skills-card-img" src="./images/docker.svg" alt="Docker" loading="lazy"></span>
+                        <p class="skills-card-name">Docker</p>
+                    </div>
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon">
+                            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#5db4ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-label="Microservices">
+                                <rect x="9" y="2.5" width="6" height="6" rx="1.3"></rect>
+                                <rect x="2.5" y="15.5" width="6" height="6" rx="1.3"></rect>
+                                <rect x="15.5" y="15.5" width="6" height="6" rx="1.3"></rect>
+                                <path d="M12 8.5v3M12 11.5H5.5v4M12 11.5h6.5v4"></path>
+                            </svg>
+                        </span>
+                        <p class="skills-card-name">Microservices</p>
+                    </div>
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon"><img class="skills-card-img" src="./images/git-scm-icon.svg" alt="Git" loading="lazy"></span>
                         <p class="skills-card-name">Git</p>
                     </div>
-                    <div class="skills-card">
-                        <img title="GitHub" class="skills-card-img" src="./images/github.png" alt="GitHub">
-                        <p class="skills-card-name">GitHub</p>
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon"><img class="skills-card-img" src="./images/mysql.png" alt="MySQL" loading="lazy"></span>
+                        <p class="skills-card-name">MySQL</p>
+                    </div>
+                    <div class="skills-card reveal reveal-scale">
+                        <span class="skills-icon"><img class="skills-card-img" src="./images/Amazon_Web_Services_Logo.svg" alt="AWS" loading="lazy"></span>
+                        <p class="skills-card-name">AWS</p>
                     </div>
                 </div>
-            </div>
-            <!-- projects -->
-            <div id="projects">
-                <!-- Projects -->
-                <h1>Projects</h1>
+            </section>
 
-                <!-- project 1 -->
-                <div class="project-card">
-                    <img src="./images/Home page.PNG" alt="">
-                    <h2 class="project-title">Flipkart</h2>
-                    <p class="project-tech-stack"> <b> Tech Stack: </b> HTML | CSS | JavaScript | Node.js | Express.js |
-                        MongoDB</p>
-                    <p class="project-description">Flipkart Clone, an e-commerce website. Where user can purchase
-                        differnt different products and get some rewards.</p>
-                    <div id="project-btn">
-                        <a class="project-github-link" href="https://github.com/himanshu60/smiling-desk-5826"
-                            target="_blank"><button>GitHub</button></a>
-                        <a class="project-deployed-link" href="https://startling-starship-84b8ae.netlify.app/"
-                            target="_blank"><button>Demo</button></a>
-                    </div>
+            <!-- ============ PROJECTS ============ -->
+            <section id="projects" class="section">
+                <div class="section-head">
+                    <h2 class="section-title">Projects</h2>
+                    <p class="section-subtitle">Professional work at Clodura.AI and selected personal builds.</p>
                 </div>
 
-                <!-- project 2 -->
-                <div class="project-card">
-                    <img src="./images/home-page(Hangout).png" alt="">
-                    <h2 class="project-title">Real-Time-Chat-App</h2>
-                    <p class="project-tech-stack"> <b> Tech Stack: </b> HTML | CSS | JavaScript | Socket.io | MongoDB | Node.js </p>
-                    <p class="project-description">It is an online communication channel that allows you to conduct
-                        real-time conversations. It involves the transmission of live text messages from the sender to
-                        the recipient.
+                <h3 class="subgroup-title reveal">Professional Work</h3>
+
+                <!-- Clodura platform -->
+                <div class="project-card featured reveal">
+                    <span class="project-badge">Clodura.AI · Product</span>
+                    <h2 class="project-title">Clodura Sales Intelligence Platform</h2>
+                    <p class="project-description">
+                        Enterprise B2B SaaS sales-intelligence platform. I develop and maintain core modules
+                        end-to-end and led the platform's Angular → Next.js modernization.
                     </p>
-                    <div id="project-btn">
-                        <a class="project-github-link" href="https://github.com/himanshu60/spry-smash-650"
-                            target="_blank"><button>GitHub</button></a>
-                        <a class="project-deployed-link" href="https://64802391adddc43187b1cf49--lambent-trifle-ac5b1d.netlify.app/"
-                            target="_blank"><button>Demo</button></a>
+                    <ul class="project-impact">
+                        <li>Migrated <b>8+ modules</b> to Next.js, boosting load speed &amp; SEO.</li>
+                        <li><b>30%</b> faster page loads and API responses via caching &amp; de-duped calls.</li>
+                        <li>Reusable UI component library adopted across multiple modules.</li>
+                    </ul>
+                    <div class="tag-row" style="justify-content:flex-start">
+                        <span class="tag">Angular</span><span class="tag">Next.js</span><span class="tag">Node.js</span>
+                        <span class="tag">Go</span><span class="tag">RTK Query</span><span class="tag">Tailwind</span>
                     </div>
-
-
-                </div>
-                 
-
-                <!-- project 3 -->
-                <div class="project-card">
-                    <img src="./images/parent_home.PNG" alt="">
-                    <h2 class="project-title">Parent-chat-influencers</h2>
-                    <p class="project-tech-stack"> <b> Tech Stack: </b> Vue.js | CSS | JavaScript | Generative AI </p>
-                    <p class="project-description"> This Application is build with the help of ChatGPT. A parent influencer is a parent who has a significant impact on other people, especially other parents, through social media and online platforms. They use their personal experiences, advice, and recommendations to influence and inspire others in various aspects of parenting, such as sharing parenting tips, product recommendations, family activities, and more. So I am creating a web application using Generative AI for asking questions and answering.
-                    </p>
                     <div id="project-btn">
-                        <a class="project-github-link" href="https://github.com/himanshu60/Parent-influencers"
-                            target="_blank"><button>GitHub</button></a>
-                        <a class="project-deployed-link" href="https://parent-influencers-frontend.vercel.app/"
-                            target="_blank"><button>Demo</button></a>
-                    </div>
-
-
-                </div>
-
-<!-- project 4 -->
-                <div class="project-card">
-                    <img src="./images//Zee5 Home page.PNG" alt="">
-                    <h2 class="project-title">Zee5</h2>
-                    <p class="project-tech-stack"> <b> Tech Stack: </b> HTML | CSS | JavaScript | JSON Server</p>
-                    <p class="project-description">ZEE5 is an Entertainment platform ,where you can enjoy with WebSeries
-                        , Serials, movies etc...
-                    </p>
-                    <div id="project-btn">
-                        <a class="project-github-link" href="https://github.com/himanshu60/legal-hook-6879"
-                            target="_blank"><button>GitHub</button></a>
-                        <a class="project-deployed-link" href="https://prismatic-raindrop-8d1a7e.netlify.app/"
-                            target="_blank"><button>Demo</button></a>
-                    </div>
-
-
-                </div>
-
-                <!-- project 5 -->
-                <div class="project-card">
-                    <img src="./images/Elpolloloco-page.PNG" alt="">
-                    <h2 class="project-title">Elpolloloco</h2>
-                    <p class="project-tech-stack"> <b> Tech Stack: </b>HTML | CSS | JavaScript</p>
-                    <p class="project-description">ElPolloloco is a online food web site where we can order all kind of
-                        foods online.</p>
-                    <div id="project-btn">
-                        <a class="project-github-link" href="https://github.com/himanshu60/concerned-toothpaste-1616"
-                            target="_blank"><button>GitHub</button></a>
-                        <a class="project-deployed-link" href="https://lucent-manatee-f90f25.netlify.app/"
-                            target="_blank"><button>Demo</button></a>
+                        <a class="project-deployed-link" href="https://www.clodura.ai/" target="_blank" rel="noopener">
+                            <button>Visit Clodura.AI</button></a>
                     </div>
                 </div>
 
-
-                
-                <!-- project 6 -->
-                <div class="project-card">
-                    <img src="./images//locks-home.PNG" alt="">
-                    <h2 class="project-title">Hair Salon Booking System</h2>
-                    <p class="project-tech-stack"> <b> Tech Stack: </b> HTML | CSS | JavaScript | Node.js | Express.js | MongoDB </p>
-                    <p class="project-description">Our hair salon's website is here to help you look amazing! We're experts at making your hair look great. Whether you want a new haircut, a different hair color, or just some relaxation, we can do it all. Check out our services, make an appointment, and get ready to feel fantastic with fabulous hair. We're just a click away!
-                    </p>
-                    <div id="project-btn">
-                        <a class="project-github-link" href="https://github.com/himanshu60/past-comparison-1722"
-                            target="_blank"><button>GitHub</button></a>
-                        <a class="project-deployed-link" href="https://classy-sunburst-efb9f4.netlify.app/"
-                            target="_blank"><button>Demo</button></a>
-                    </div>
-
-
-                </div>
-                <!-- ------------------------------------------------------------------------------- -->
-
-                <div id="contact">
-                    <!-- Contact -->
-                    <h1>Contact</h1>
-                    <div>
-                        <div id="sm-links">
-                            <h4>Phone:</h4>
-                            <p id="contact-phone">+91 8433250941</p>
-                            <h4>Email:</h4>
-                            <p id="contact-email">baliyanh10@gmail.com</p>
-                            <div>
-                                <img src="./images/linkedin.png" alt="">
-                                <a id="contact-linkedin"
-                                    href="https://www.linkedin.com/in/himanshu-choudhary-522a05197/"
-                                    target="_blank">LinkedIn</a>
-                            </div>
-                            <div>
-                                <img src="./images/github.png" alt="">
-                                <a id="contact-github" href="https://github.com/himanshu60" target="_blank">GitHub</a>
-                            </div>
-
+                <div class="project-duo stagger">
+                    <div class="project-card reveal">
+                        <span class="project-badge">Real-time · Telephony</span>
+                        <h2 class="project-title">Twilio Dialer</h2>
+                        <p class="project-description">
+                            A Twilio-powered dialer built into the core sales workflow, with call-usage
+                            tracking and call-recording management.
+                        </p>
+                        <ul class="project-impact">
+                            <li>Real-time call handling with WebSockets.</li>
+                            <li>Usage metering &amp; recording lifecycle management.</li>
+                        </ul>
+                        <div class="tag-row" style="justify-content:flex-start">
+                            <span class="tag">Twilio</span><span class="tag">WebSockets</span><span class="tag">Node.js</span><span class="tag">Next.js</span>
                         </div>
-                        <form id="contact-form" action="https://formspree.io/f/xrgvdbrb" method="POST">
-                            <label for="name">Name*</label>
-                            <input type="text" name="name" placeholder="Name" required>
-                            <label for="email">Email*</label>
-                            <input type="text" name="email" placeholder="Email" required>
-                            <label for="phone">Phone</label>
-                            <input type="text" name="phone" placeholder="Phone">
-                            <label for="message">Message*</label>
-                            <textarea name="Message" id="" placeholder="Your Message" rows="5" required></textarea>
-                            <!-- <input type="submit"> -->
-                            <button>Submit</button>
-                        </form>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <span class="project-badge">SaaS Module</span>
+                        <h2 class="project-title">Contact Search</h2>
+                        <p class="project-description">
+                            High-traffic contact-search module with unlock workflows, entitlement
+                            validation and bulk export.
+                        </p>
+                        <ul class="project-impact">
+                            <li>Entitlement checks &amp; unlock workflow.</li>
+                            <li>Bulk export for large result sets.</li>
+                        </ul>
+                        <div class="tag-row" style="justify-content:flex-start">
+                            <span class="tag">Next.js</span><span class="tag">Go</span><span class="tag">RTK Query</span><span class="tag">REST APIs</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <span class="project-badge">SaaS Module</span>
+                        <h2 class="project-title">Company Profile</h2>
+                        <p class="project-description">
+                            Enterprise Company Profile module surfacing rich firmographic data with
+                            optimized, cached API state.
+                        </p>
+                        <ul class="project-impact">
+                            <li>Optimized API state management &amp; caching.</li>
+                            <li>Role-based access to profile data.</li>
+                        </ul>
+                        <div class="tag-row" style="justify-content:flex-start">
+                            <span class="tag">Angular</span><span class="tag">Next.js</span><span class="tag">RTK Query</span><span class="tag">Node.js</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <span class="project-badge">Modernization</span>
+                        <h2 class="project-title">Angular → Next.js Migration</h2>
+                        <p class="project-description">
+                            Led a phased migration of legacy Angular modules to Next.js, improving
+                            performance, SEO and maintainability without disrupting users.
+                        </p>
+                        <ul class="project-impact">
+                            <li><b>8+</b> modules migrated incrementally.</li>
+                            <li><b>30%</b> faster loads, better SEO visibility.</li>
+                        </ul>
+                        <div class="tag-row" style="justify-content:flex-start">
+                            <span class="tag">Angular</span><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Shadcn UI</span>
+                        </div>
                     </div>
                 </div>
 
+                <h3 class="subgroup-title reveal">Personal Projects</h3>
+                <div class="project-duo stagger">
+                    <div class="project-card reveal">
+                        <img src="./images/home-page(Hangout).png" alt="Real-time chat app" loading="lazy">
+                        <h2 class="project-title">Real-Time Chat App</h2>
+                        <p class="project-tech-stack"><b>Tech Stack:</b> Socket.io · Node.js · MongoDB · JavaScript</p>
+                        <p class="project-description">Online communication channel for real-time conversations — live text messaging between sender and recipient.</p>
+                        <div id="project-btn">
+                            <a class="project-github-link" href="https://github.com/himanshu60/spry-smash-650" target="_blank" rel="noopener"><button>GitHub</button></a>
+                            <a class="project-deployed-link" href="https://64802391adddc43187b1cf49--lambent-trifle-ac5b1d.netlify.app/" target="_blank" rel="noopener"><button>Demo</button></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <img src="./images/locks-home.PNG" alt="Hair Salon booking system" loading="lazy">
+                        <h2 class="project-title">Hair Salon Booking System</h2>
+                        <p class="project-tech-stack"><b>Tech Stack:</b> Node.js · Express.js · MongoDB · JavaScript</p>
+                        <p class="project-description">A salon website to browse services and book appointments, backed by a Node.js/Express API and MongoDB.</p>
+                        <div id="project-btn">
+                            <a class="project-github-link" href="https://github.com/himanshu60/past-comparison-1722" target="_blank" rel="noopener"><button>GitHub</button></a>
+                            <a class="project-deployed-link" href="https://classy-sunburst-efb9f4.netlify.app/" target="_blank" rel="noopener"><button>Demo</button></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <img src="./images/Home page.PNG" alt="Flipkart clone" loading="lazy">
+                        <h2 class="project-title">Flipkart Clone</h2>
+                        <p class="project-tech-stack"><b>Tech Stack:</b> Node.js · Express.js · MongoDB · JavaScript</p>
+                        <p class="project-description">An e-commerce app where users browse and purchase products, built with a Node.js backend and MongoDB.</p>
+                        <div id="project-btn">
+                            <a class="project-github-link" href="https://github.com/himanshu60/smiling-desk-5826" target="_blank" rel="noopener"><button>GitHub</button></a>
+                            <a class="project-deployed-link" href="https://startling-starship-84b8ae.netlify.app/" target="_blank" rel="noopener"><button>Demo</button></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <img src="./images/parent_home.PNG" alt="Parent influencers app" loading="lazy">
+                        <h2 class="project-title">Parent Influencers</h2>
+                        <p class="project-tech-stack"><b>Tech Stack:</b> Vue.js · Generative AI · JavaScript · CSS</p>
+                        <p class="project-description">A Q&amp;A web app for parents built with Generative AI, offering parenting tips, advice and recommendations.</p>
+                        <div id="project-btn">
+                            <a class="project-github-link" href="https://github.com/himanshu60/Parent-influencers" target="_blank" rel="noopener"><button>GitHub</button></a>
+                            <a class="project-deployed-link" href="https://parent-influencers-frontend.vercel.app/" target="_blank" rel="noopener"><button>Demo</button></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ CONTACT ============ -->
+            <section id="contact" class="section">
+                <div class="section-head">
+                    <h2 class="section-title">Contact</h2>
+                    <p class="section-subtitle">Have an opportunity or want to collaborate? Let's talk.</p>
+                </div>
+                <div class="contact-wrap">
+                    <div id="sm-links">
+                        <a class="contact-item reveal" href="tel:+918433250941">
+                            <span class="contact-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6A2 2 0 0 1 22 16.9z"></path>
+                                </svg>
+                            </span>
+                            <span class="contact-meta"><small>Phone</small><b>+91 8433250941</b></span>
+                        </a>
+                        <a class="contact-item reveal" href="mailto:baliyanh10@gmail.com">
+                            <span class="contact-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                    <path d="m22 7-10 6L2 7"></path>
+                                </svg>
+                            </span>
+                            <span class="contact-meta"><small>Email</small><b>baliyanh10@gmail.com</b></span>
+                        </a>
+                        <div class="contact-item reveal">
+                            <span class="contact-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </span>
+                            <span class="contact-meta"><small>Location</small><b>Delhi · Noida · Gurugram</b></span>
+                        </div>
+                        <div class="contact-socials reveal">
+                            <a id="contact-linkedin" class="social-pill" href="https://www.linkedin.com/in/himanshu-choudhary-522a05197/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"></path></svg>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a id="contact-github" class="social-pill" href="https://github.com/himanshu60" target="_blank" rel="noopener" aria-label="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.94c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.74 1.27 3.4.97.11-.76.41-1.27.74-1.56-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.42.36.8 1.08.8 2.18v3.23c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"></path></svg>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                    <form id="contact-form" class="reveal" action="https://formspree.io/f/xrgvdbrb" method="POST">
+                        <div class="field">
+                            <label for="name">Name*</label>
+                            <input id="name" type="text" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="field">
+                            <label for="email">Email*</label>
+                            <input id="email" type="email" name="email" placeholder="you@example.com" required>
+                        </div>
+                        <div class="field">
+                            <label for="phone">Phone</label>
+                            <input id="phone" type="text" name="phone" placeholder="Optional">
+                        </div>
+                        <div class="field">
+                            <label for="message">Message*</label>
+                            <textarea id="message" name="Message" placeholder="Tell me about the opportunity…" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4 20-7z"></path></svg>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
     </main>
-    <div id="btm">Thanks for Visiting ❤️❤️❤️ </div>
+
+    <footer id="btm">Thanks for visiting ❤️ &nbsp;·&nbsp; Built by Himanshu Choudhary</footer>
+
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <button id="scroll-top" aria-label="Scroll to top" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7"></path>
+        </svg>
+    </button>
+
+    <script defer src="./scripts/theme.js"></script>
+    <script defer src="./scripts/animations.js"></script>
+    <script defer src="./scripts/download.js"></script>
+    <script defer src="./scripts/home.js"></script>
+    <script defer src="./scripts/navbar.js"></script>
 </body>
 
 </html>
-<script defer src="./scripts/download.js"></script>
-<script defer src="./scripts/home.js"></script>
-<script defer src="./scripts/navbar.js"></script>
-<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
-<script>
-    GitHubCalendar(".calendar", "himanshu60", { global_stats: false, responsive: true });
-</script>
