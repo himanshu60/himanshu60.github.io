@@ -58,6 +58,18 @@
     color: var(--text);
 }
 
+.soft-skills {
+    max-width: 720px;
+    margin: 0 auto;
+    gap: 12px;
+}
+
+.soft-tag {
+    font-size: 0.98rem;
+    padding: 10px 18px;
+    box-shadow: var(--shadow-sm);
+}
+
 @media screen and (max-width: 768px) {
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
